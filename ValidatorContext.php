@@ -125,16 +125,16 @@ final class ValidatorContext {
             $pseudo_class = $parts['pseudo-class'];
             $model = $this->validator->getModel();
             switch ($pseudo_class) {
-                case "checked":
+                case ":checked":
                     $result = array_key_exists($name, $model);
                     break;
-                case "unchecked":
+                case ":unchecked":
                     $result = !array_key_exists($name, $model);
                     break;
-                case "filled":
+                case ":filled":
                     $result = array_key_exists($name, $model) && strlen($model[$name]) > 0;
                     break;
-                case "blank":
+                case ":blank":
                     $result = array_key_exists($name, $model) && strlen($model[$name]) === 0;
                     break;
                 case null:
